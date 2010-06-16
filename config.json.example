@@ -1,0 +1,7 @@
+{
+  "oauth" : {
+    "key" : "YOUR KEY",
+    "secret" : "YOUR SECRET" 
+  },
+  "url" : "YOUR URL"
+}

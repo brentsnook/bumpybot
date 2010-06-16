@@ -5,6 +5,8 @@ api_version: 1
 
 handlers:
 - url: /_wave/.*
-  script: bumpyBot.py
+  script: bumpy_bot.py
 - url: /assets
   static_dir: assets
+- url: /pull.*
+  script: bumpy/pull.py
