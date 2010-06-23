@@ -8,9 +8,9 @@ class PullHandler(webapp.RequestHandler):
         self._bumpy = bumpy.Bumpy()
 
     def get(self):
-	    self.response.headers['Content-Type'] = 'application/json; charset=utf-8'
+        self.response.headers['Content-Type'] = 'application/json; charset=utf-8'
         self.response.out.write(self._bumpy.pull(self.request.path).encode('utf-8'))
-        
+
 def main():
     application = webapp.WSGIApplication([('/pull.*', PullHandler)], debug=True)
     run_wsgi_app(application)                                    

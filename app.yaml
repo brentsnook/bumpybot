@@ -10,3 +10,5 @@ handlers:
   static_dir: assets
 - url: /pull.*
   script: bumpy/pull.py
+- url: /push.*
+  script: bumpy/push.py
