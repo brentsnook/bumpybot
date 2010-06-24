@@ -1,7 +1,7 @@
-- handle existing blip content
-- find where to insert the blip
-- push and add summary to blip attached to feature name [][]
-- push and highlight steps
+- fix loading of config
+- format message nicely: Passing | Failing | Pending
+
+- highlight steps
 - better join message
   
   Thanks for inviting me! Install the <bumps gem> and drop this into *env.rb* to get rolling:
@@ -12,3 +12,11 @@
     pull_from 'http://localhost:1981'
     push_to 'url'
   end
+  
+  
+  
+LATER
+
+- return better output to cukes
+  - updated OK
+  - version mismatch
