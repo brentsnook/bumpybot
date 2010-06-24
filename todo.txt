@@ -1,11 +1,7 @@
-
-  
-- push and post feature names to wave
-
-- push and add summary to blip attached to feature name
+- handle existing blip content
+- find where to insert the blip
+- push and add summary to blip attached to feature name [][]
 - push and highlight steps
-
-
 - better join message
   
   Thanks for inviting me! Install the <bumps gem> and drop this into *env.rb* to get rolling:
