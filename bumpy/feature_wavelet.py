@@ -42,8 +42,9 @@ class FeatureWavelet:
       
     def _update_blip(self, blip, feature):
         end_of_feature_name = self.FEATURE.search(blip.text).end() - 1
-        self._metadata_blip(blip, end_of_feature_name).append('Ran ' + feature['finished'])
         self._highlight_steps(blip, feature)
+        # add metadata after otherwise first highlight is one character short (blip adds a single space)
+        self._metadata_blip(blip, end_of_feature_name).append('Ran ' + feature['finished'])
 
     def _metadata_blip(self, blip, insertion_point):
         metadata_blip = None
