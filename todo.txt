@@ -1,5 +1,4 @@
 
-- better colours
 - split up Bumpy - way too big
 - organise utils
 - better join message - []
@@ -33,11 +32,13 @@
       - Wave --> Robot --> JSON(Features) --> Cucumber with Bumps --> JSON(results) --> Robot --> Wave
     - Bumps URL, Bumpybot URL (hack - needs redoing and testing properly)
       - Next: more usable robot with more information
+              - dynamic gadget to indicate last modification time
+              - indication that someone has edited the blip since the run
   
   
 LATER
-- break up Bumpybot - too big
-- remove utils
+- TESTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- visual indicator of the wave being edited - bold and unbold title?
 - return better output to cukes
   - updated OK
   - version mismatch

@@ -29,11 +29,11 @@ class Bumpy:
     ROBOT_URL = CONFIG['url']
     FEATURE = re.compile("\W*Feature:(.*)\n")
     STATUS_COLOURS = {
-        'passed' : 'rgb(0,150,0)',
-        'failing' : 'rgb(150,0,0)',
-        'pending' : 'rgb(0,150,150)',
-        'undefined' : 'rgb(0,150,150)',
-        'skipped' : 'rgb(0,0,150)'
+        'passed' : 'rgb(0,128,0)',
+        'failed' : 'rgb(255,0,0)',
+        'pending' : 'rgb(255,140,0)',
+        'undefined' : 'rgb(255,140,0)',
+        'skipped' : 'rgb(30,134,255)'
     }
     
     @classmethod
@@ -104,9 +104,6 @@ class Bumpy:
                 logging.info(str(line_range.value()))
                 line_range.clear_annotation('style/color')
                 line_range.annotate('style/color', self.STATUS_COLOURS[step['status']])
-        # get line ranges
-        # clear annotations
-        # add annotation with colour for status
       
     def _line_ranges(self, blip):
         ranges = []
