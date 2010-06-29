@@ -1,6 +1,4 @@
 
-- split up Bumpy - way too big
-- organise utils
 - better join message - []
   
   Thanks for inviting me! Install the <bumps gem> and drop this into *env.rb* to get rolling:
@@ -12,7 +10,15 @@
     push_to 'url'
   end
 
-- get both ready to release and test [][]
+- get Bumps ready for release
+  - README
+  - wiki page update
+  - release notes
+  - version update
+  
+- get Bumpybot ready for release
+  - README
+  - version
 
 - presentation[][][][]
   - 5 slides
@@ -37,6 +43,8 @@
   
   
 LATER
+- split FeatureWavelet into FeatureBlip
+- organise utils
 - TESTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - visual indicator of the wave being edited - bold and unbold title?
 - return better output to cukes

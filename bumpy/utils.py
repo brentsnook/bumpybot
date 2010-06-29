@@ -1,12 +1,3 @@
-import logging
-import os
-import time
-import hashlib,urllib
-
-from waveapi import element
-from waveapi import robot
-from waveapi import simplejson as json
-
 def _mangle_wave_id(wave_id):
     return "%s/%s" % (wave_id.split("!")[0], wave_id.split("+")[1])
 
