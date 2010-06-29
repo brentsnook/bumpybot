@@ -7,6 +7,7 @@ import urllib
 from waveapi import appengine_robot_runner
 from waveapi import robot
 from waveapi import events
+from waveapi import element
 from waveapi import simplejson as json
 
 def _read_config():
@@ -27,6 +28,13 @@ class Bumpy:
     
     ROBOT_URL = CONFIG['url']
     FEATURE = re.compile("\W*Feature:(.*)\n")
+    STATUS_COLOURS = {
+        'passed' : 'rgb(0,150,0)',
+        'failing' : 'rgb(150,0,0)',
+        'pending' : 'rgb(0,150,150)',
+        'undefined' : 'rgb(0,150,150)',
+        'skipped' : 'rgb(0,0,150)'
+    }
     
     @classmethod
     def pull_url(self, wavelet):
@@ -54,7 +62,7 @@ class Bumpy:
             if str(blip.version) == str(feature['version']):
                 self._update_blip(blip, feature)
             else:
-	            logging.info('Could not update blip ' + blip.blip_id + ', incoming version (' + feature['version'] + ') not current (' + str(blip.version) + ')')
+                logging.info('Could not update blip ' + blip.blip_id + ', incoming version (' + feature['version'] + ') not current (' + str(blip.version) + ')')
         
             self._robot.submit(wavelet)
 
@@ -74,11 +82,11 @@ class Bumpy:
     def _update_blip(self, blip, feature):
         end_of_feature_name = self.FEATURE.search(blip.text).end() - 1
         self._metadata_blip(blip, end_of_feature_name).append('Ran ' + feature['finished'])
+        self._highlight_steps(blip, feature)
 
     def _metadata_blip(self, blip, insertion_point):
         metadata_blip = None
         for child in blip.child_blips:
-            logging.debug("Child offset: " + str(child.inline_blip_offset))
             if child.inline_blip_offset == insertion_point - 1:
                 metadata_blip = child
                 metadata_blip.all().delete()
@@ -86,7 +94,30 @@ class Bumpy:
         if metadata_blip == None:
             metadata_blip = blip.insert_inline_blip(insertion_point)
         return metadata_blip
-          
+     
+    def _highlight_steps(self, blip, feature):
+        line_ranges = self._line_ranges(blip)
+        for scenario in feature['scenarios']:
+            for step in scenario['steps']:
+                line_range = line_ranges[step['line'] - 1]
+                logging.info("Line is " + str(step['line']))
+                logging.info(str(line_range.value()))
+                line_range.clear_annotation('style/color')
+                line_range.annotate('style/color', self.STATUS_COLOURS[step['status']])
+        # get line ranges
+        # clear annotations
+        # add annotation with colour for status
+      
+    def _line_ranges(self, blip):
+        ranges = []
+        start = 0
+        for line in blip.text.splitlines(True):
+            logging.info(str(start) + " to " + str(start + len(line)))
+            ranges.append(blip.range(start, start + len(line)))
+            start += len(line)
+        
+        return ranges
+       
     def _fetch_wavelet_from(self, url):
         wave_id = utils.extract_wave_id(url)
         wavelet_id = utils.generate_wavelet_id_from_wave_id(wave_id)

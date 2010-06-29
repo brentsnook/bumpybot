@@ -1,8 +1,8 @@
-- fix loading of config
-- format message nicely: Passing | Failing | Pending
 
-- highlight steps
-- better join message
+- better colours
+- split up Bumpy - way too big
+- organise utils
+- better join message - []
   
   Thanks for inviting me! Install the <bumps gem> and drop this into *env.rb* to get rolling:
   
@@ -12,11 +12,32 @@
     pull_from 'http://localhost:1981'
     push_to 'url'
   end
-  
+
+- get both ready to release and test [][]
+
+- presentation[][][][]
+  - 5 slides
+    - who am I?
+    - problem - BDD, features made for devs but behaviour belongs to everyone
+    - feature content needs to come out of text files and live in a place where it can be shared and collaborated on
+    - Wave - a platform for collaboration, has a nifty robot API - automated participants, realtime collaboration - why can't features live here?
+    - Demo
+      - add a feature to a new wave
+      - invite bumpy
+      - drop config into env file
+      - run - see highlight and metadata blip
+      - add scenarios to make it pass
+      - run again and look at Wave
+      - hooks up a wave by inserting tags
+    - Bumps - Cucumber (vegetable) --> speech bubble (Jason voorhees) --> Robot (Marvin) down and back up
+      - Wave --> Robot --> JSON(Features) --> Cucumber with Bumps --> JSON(results) --> Robot --> Wave
+    - Bumps URL, Bumpybot URL (hack - needs redoing and testing properly)
+      - Next: more usable robot with more information
   
   
 LATER
-
+- break up Bumpybot - too big
+- remove utils
 - return better output to cukes
   - updated OK
   - version mismatch
