@@ -15,15 +15,15 @@ Bumpybot allows you to collaborate on your features within a wave while still al
 
 Bumpybot has been designed to work with {Bumps}[http://github.com/brentsnook/bumps].
 
-*Note that this Robot is spike code - it has no test coverage and is not guaranteed to work*. A more stable version is in the works.
+<b>Note that this robot is spike code - it has no test coverage and is not guaranteed to work</b>. A more stable version is in the works.
 
 Remember:
 
-* *Bumpybot will make your features public* - it will expose your feature content to the outside world, even if your wave is private. Authentication is on the cards for later.
+* <b>Bumpybot will make your features public!</b> - it will expose your feature content to the outside world, even if your wave is private. Authentication is on the cards for later.
 
 == Using Bumpybot
 
-First create a wave and invite *bumpybot@appspot.com*. Bumpybot will post some instructions on how to configure Cucumber and {Bumps}[http://github.com/brentsnook/bumps].
+First create a wave and invite <b>bumpybot@appspot.com</b>. Bumpybot will post some instructions on how to configure Cucumber and {Bumps}[http://github.com/brentsnook/bumps].
 
 Add some Cucumber features to your wave, making sure that each one is in a new blip.
 
@@ -33,7 +33,7 @@ Once you have configured Cucumber as instructed, run it as normal. Bumpybot shou
 
 You can also deploy your own version of Bumpybot.
 
-Copy *config.json.example* to *config.json*. You will need to {register your robot}[http://code.google.com/apis/wave/extensions/robots/operations.html#ActiveRobotAPI] and fill out your config accordingly.
+Copy <b>config.json.example</b> to <b>config.json</b>. You will need to {register your robot}[http://code.google.com/apis/wave/extensions/robots/operations.html#ActiveRobotAPI] and fill out your config accordingly.
 
 Deploy your version of Bumpybot and invite it to a wave.
 
