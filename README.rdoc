@@ -17,6 +17,8 @@ Bumpybot has been designed to work with {Bumps}[http://github.com/brentsnook/bum
 
 <b>Note that this robot is spike code - it has no test coverage and is not guaranteed to work</b>. A more stable version is in the works.
 
+Thanks to Chris Parsons for {Pushy}[http://github.com/chrismdp/pushy] from which I ripped off...err..was inspired by a lot of the code.
+
 Remember:
 
 * <b>Bumpybot will make your features public!</b> - it will expose your feature content to the outside world, even if your wave is private. Authentication is on the cards for later.
