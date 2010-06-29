@@ -1,25 +1,4 @@
 
-- better join message - []
-  
-  Thanks for inviting me! Install the <bumps gem> and drop this into *env.rb* to get rolling:
-  
-  require 'bumps'
-  
-  Bumps.configure do
-    pull_from 'http://localhost:1981'
-    push_to 'url'
-  end
-
-- get Bumps ready for release - []
-  - README
-  - wiki page update
-  - release notes
-  - version update
-  
-- get Bumpybot ready for release - []
-  - README
-  - version
-
 - presentation[][][][]
   - 5 slides
     - who am I?
@@ -44,7 +23,6 @@
   
 LATER
 - split FeatureWavelet into FeatureBlip
-- organise utils
 - TESTS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 - visual indicator of the wave being edited - bold and unbold title?
 - return better output to cukes
